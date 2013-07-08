@@ -1,5 +1,6 @@
 <%= form_for(@product) do |f| %>
 
+  <!-- error message if product not succesfully saved or updated -->
   <% if @product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
