@@ -1,0 +1,3 @@
+This is an Amazon clone called Rainforest
+
+by Andrew Khajerian
