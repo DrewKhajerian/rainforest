@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :name, :price_in_cents
+  attr_accessible :name, :description, :price_in_cents
 
-  validates :description, :name, :precence => true
-  validtaes :price_in_cents, :numericality => {only_integer => true}
+  validates :description, :name, :presence => true
+  validates :price_in_cents, :numericality => {:only_integer => true}
 end

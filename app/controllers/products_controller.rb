@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-  	@products = Products.all
+  	@products = Product.all
 
   	respond_to do |format|
       format.html # index.html.erb
@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-  	@products = Product.find(params[:id])
+  	@product = Product.find(params[:id])
 
   	respond_to do |format|
       format.html # show.html.erb
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-  	@products = Product.new
+  	@product = Product.new
 
   	respond_to do |format|
       format.html # new.html.erb
@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-  	@products = Product.find(params[:product])
+  	@product = Product.new(params[:product])
   	
   	respond_to do |format|	
 	  	if @product.save
@@ -41,11 +41,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
-  	@products = Product.find(params[:id])
+  	@product = Product.find(params[:id])
   end
 
   def update
-  	@products = Product.find(params[:id])
+  	@product = Product.find(params[:id])
 
   	respond_to do |format|
 	  	if @product.update_attributes(params[:product])
@@ -59,8 +59,8 @@ class ProductsController < ApplicationController
   end
 
   def destory
-  	@products = Product.find(params[:id])
-  	@products.destroy
+  	@product = Product.find(params[:id])
+  	@product.destroy
 
   	respond_to do |format|
   		format.hmtl { redirect_to products_url }

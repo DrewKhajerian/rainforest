@@ -1,2 +1,12 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<div class="show-product">
+
+	<h1>Product</h1>
+
+	<strong style="font-size:12px">Product Name</strong>
+	<p><%= @product[:name] %></p>
+	<p>Price: <%= number_with_precision((@product[:price_in_cents].to_f)/100, :precision => 2) %></p>
+	<strong style="font-size:12px">Description</strong>
+	<p><%= @product[:description] %></p>
+	
+
+</div>
