@@ -19,7 +19,7 @@
 				<%= review.comment %>
 				<br>
 				<% if review.user != nil %>
-					<em> by <% if review.user.email %></em>
+					<em> by <% review.user.name %></em>
 					Added on: <%= reviews.created_at %>
 				<% end %>
 			</p>
@@ -31,15 +31,13 @@
 	    <% if @review.errors.any? %>
 	      <div id="error_explanation">
 	        <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
-
 	        <ul>
-	        <% @review.errors.full_messages.each do |msg| %>
-	          <li><%= msg %></li>
-	        <% end %>
+		        <% @review.errors.full_messages.each do |msg| %>
+		          <li><%= msg %></li>
+		        <% end %>
 	        </ul>
 	      </div>
 	    <% end %>
-
 	    <div class="field">
 	      <%= f.label :comment %><br />
 	      <%= f.text_area :comment %>

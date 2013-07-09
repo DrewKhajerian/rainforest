@@ -11,7 +11,7 @@
 				</ul>
 				<ul class="nav pull-right">
 			  	<% if current_user %>
-			        <li>Signed in as <%= current_user.email %></li> 
+			        <li>Signed in as <%= current_user.name %></li> 
 			        <li><%= link_to "Log out", sessions_path("current"), :method => :delete %></li>
 			     <% else %>
 			        <li><%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %></li>

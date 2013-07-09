@@ -27,6 +27,6 @@ class ReviewsController < ApplicationController
   private 
 
   def load_product
-  	@product = Product.find(params[:product])
+  	@product = Product.find(params[:product_id])
   end
 end
