@@ -6,6 +6,8 @@ class ProductsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @product }
     end
+
+    @products_view = true
   end
 
   def show
@@ -15,6 +17,8 @@ class ProductsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @product }
     end
+
+    @show_view = true
   end
 
   def new

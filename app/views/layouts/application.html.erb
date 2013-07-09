@@ -8,10 +8,9 @@
 </head>
 	<body>
 
-
 		<%= render 'layouts/header' %>
 		
-		<div class="container">
+		<div class="body-container">
 		  <% if flash[:notice] %>
 	      <p id="notice"><%= flash[:notice] %></p>
 	    <% end %>
@@ -20,14 +19,6 @@
 	    <% end %>
 			
 			<%= yield %>
-
-			<p class="userinfo">
-	      <% if current_user %>
-	        Signed in as <%= current_user.email %>. <%= link_to "Log out", sessions_path("current"), :method => :delete %>
-	      <% else %>
-	        <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
-	      <% end %>
-	    </p>
 
 		</div>
 		

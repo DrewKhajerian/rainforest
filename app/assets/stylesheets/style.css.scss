@@ -1,0 +1,28 @@
+/*---------------Bootstrap-------------*/
+
+/*$btnPrimaryBackground: orange;*/
+/*$navbarBackgroundHighlight: gray;*/
+/*$navbarLinkColor: white;*/
+$navbarBackground: white;
+
+@import 'bootstrap';
+
+@import 'bootstrap-responsive';
+
+.navbar-inner {
+	@include box-shadow(none !important);
+	border: 0;
+}
+
+/*|------------ HEADER --------------|*/
+
+
+
+/*|------------- BODY ---------------|*/
+
+.body-container {
+	padding-top: 2px;
+	padding-left: 10px;
+}
+
+/*|------------ FOOTER --------------|*/
