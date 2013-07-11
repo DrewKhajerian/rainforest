@@ -1,3 +1,11 @@
 <h1>Home Page</h1>
 
+	<%= @products.each do |product| %>	
+			<div class="well">
+				<!-- <img></img> -->
+				<p><%= link_to product[:name], product_path(product) %></p>
+				<p><%= product.formatted_price %></p>
+				<p><%= product[:description] %></p>
+			</div>
+	<% end %>
 

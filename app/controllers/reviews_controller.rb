@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
   	@review = @product.reviews.build(params[:review])
 
   	if @review.save
-  		redirect_to products_path, notice: "Review saved successfully"
+  		redirect_to product_path(@product), notice: "Review saved successfully"
   	else
   		render :action => :show
   	end

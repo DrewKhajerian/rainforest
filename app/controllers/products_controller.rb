@@ -23,8 +23,6 @@ class ProductsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @product }
     end
-
-    @show_view = true
   end
 
   def new

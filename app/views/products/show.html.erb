@@ -1,53 +1,14 @@
 <div class="show-product">
 
-	<h1>Product</h1>
+	<h1><%= @product[:name] %></h1>
 
-	<strong style="font-size:12px">Product Name</strong>
-	<p><%= @product[:name] %></p>
-	<p>Price: <%= number_with_precision((@product[:price_in_cents].to_f)/100, :precision => 2) %></p>
-	<strong style="font-size:12px">Description</strong>
+	<p><strong>Price:</strong> <%= @product.formatted_price %></p>
+	<strong>Description</strong>
 	<p><%= @product[:description] %></p>
 
-	<% if current_user %>
+	<%= render "layouts/reviews" %>
+	<%= render "layouts/createreview" %>
 
-		<h3>Reviews</h3>
 
-		<p>Reviews for <%= @product.name %></p>
-
-		<% @product.reviews.each do |review| %>
-			<p>
-				<%= review.comment %>
-				<br>
-				<% if review.user != nil %>
-					<em> by <% review.user.name %></em>
-					Added on: <%= reviews.created_at %>
-				<% end %>
-			</p>
-		<% end %>
-
-		<h4>New Review</h4>
-
-	  <%= form_for([@product, @review]) do |f| %>
-	    <% if @review.errors.any? %>
-	      <div id="error_explanation">
-	        <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
-	        <ul>
-		        <% @review.errors.full_messages.each do |msg| %>
-		          <li><%= msg %></li>
-		        <% end %>
-	        </ul>
-	      </div>
-	    <% end %>
-	    <div class="field">
-	      <%= f.label :comment %><br />
-	      <%= f.text_area :comment %>
-	    </div>
-	    <div class="actions">
-	      <%= f.submit %>
-	    </div>
-	  <% end %>
-	<% else %>
-	  <p>Please <%= link_to "log in", new_session_path %> to add a review.</p> 
-	<% end %>
 	
 </div>
