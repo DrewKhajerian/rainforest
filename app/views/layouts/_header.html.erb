@@ -7,11 +7,13 @@
 					<li><%= link_to "Products", products_path %></li>
 					<li><%= link_to "Add+", new_product_path %></li>
 					<!-- <li>Search bar</li> -->
-					<!-- <li>link to profile</li> -->
 				</ul>
 				<ul class="nav pull-right">
 			  	<% if current_user %>
 			        <li><%= link_to current_user.name, user_path(current_user) %></li> 
+			        <% if @profile_view %>
+			        	<li><%= link_to "Edit", edit_user_path(current_user) %></li>
+			        <% end %>
 			        <li><%= link_to "Log out", session_path("current"), :method => :delete %></li>
 			     <% else %>
 			        <li><%= link_to "Log in", new_session_path %></li>

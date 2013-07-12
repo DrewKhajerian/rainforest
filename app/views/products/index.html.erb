@@ -1,5 +1,17 @@
-<h1>Home Page</h1>
+<h1>Products</h1>
 
+<div class="span2">
+	<div class="well">
+		<h4>Categories</h4>
+		<ul>
+			<%# @products.categories.each do |cats| %>
+				
+			<%# end %>
+		</ul>
+	</div>
+</div>
+
+<div class="span10">
 	<%= @products.each do |product| %>	
 			<div class="well">
 				<!-- <img></img> -->
@@ -8,4 +20,4 @@
 				<p><%= product[:description] %></p>
 			</div>
 	<% end %>
-
+</div>

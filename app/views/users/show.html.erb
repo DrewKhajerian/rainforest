@@ -1,5 +1,16 @@
-<%= link_to "Edit", edit_user_path(current_user) %>
-<h2><%= @user.name %></h2>
-<p><%= @user.email %></p>
+<div class="well">
+	<h2><%= @user.name %></h2>
+	<p><%= @user.email %></p>
+</div>
 
-
+<div class="well">
+	<h4>Reviews by <%= @user.name %></h4>
+	<% @user.reviews.each do |review| %>
+		<p>
+			<%= review.comment %> <br>
+			Last updated: <%= review.created_at %> 
+			<br>
+			<br>
+		</p>
+	<% end %>
+</div>

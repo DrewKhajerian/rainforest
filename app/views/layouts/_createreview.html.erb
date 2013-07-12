@@ -1,15 +1,15 @@
 <% if current_user %>
 
-	<h4>New Review</h4>
+  <h4>New Review</h4>
 
   <%= form_for([@product, @review]) do |f| %>
     <% if @review.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
         <ul>
-	        <% @review.errors.full_messages.each do |msg| %>
-	          <li><%= msg %></li>
-	        <% end %>
+          <% @review.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
         </ul>
       </div>
     <% end %>

@@ -1,15 +1,15 @@
 class UsersController < ApplicationController
   def new
-  	@user = User.new
+    @user = User.new
   end
 
   def create
-  	@user = User.new(params[:user])
-  	if @user.save
-  		redirect_to :back, :notice => "Signed up!"
-  	else
-  		render "new"
-  	end
+    @user = User.new(params[:user])
+    if @user.save
+      redirect_to :back, :notice => "Signed up!"
+    else
+      render "new"
+    end
   end
 
   def edit
@@ -34,6 +34,6 @@ class UsersController < ApplicationController
     if current_user
       @user = User.find(params[:id])
     end
-
+    @profile_view = true
   end
 end

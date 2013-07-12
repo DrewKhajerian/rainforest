@@ -1,6 +1,7 @@
 <div class="show-product">
 
 	<h1><%= @product[:name] %></h1>
+	<button><%= link_to "Add Category", categories_new_path %></button>
 
 	<p><strong>Price:</strong> <%= @product.formatted_price %></p>
 	<strong>Description</strong>
